@@ -13,7 +13,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 The following packages are required to perform all the analyses.
 
-```{r}
+```{r, message=FALSE}
 #Load packages
 if(!require(rgbif)){
   install.packages("rgbif")
@@ -40,6 +40,7 @@ if(!require(rgeos)){
 ## Easy test
 
 **Download occurrences data from GBIF for a species and display them on a map.**
+
 Search for the species *Peltophryne empusa*.
 
 ```{r}
@@ -98,7 +99,6 @@ box()
 points(pe_in, col = "red") #adding records in map
 ```
 
-<br>
 
 ## Medium test
 
@@ -126,7 +126,6 @@ points(pe_in, pch = 19, col = "red") #records
 plot(ch_pe, border = "gray40", add = T)
 ```
 
-<br>
 
 ## Hard test
 

@@ -1,6 +1,4 @@
-<center>
 Species range maps in R: test
-</center>
 ================
 Marlon E. Cobos
 March 10, 2018

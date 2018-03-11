@@ -14,57 +14,30 @@ if(!require(rgbif)){
   install.packages("rgbif")
   library(rgbif)
 }
-```
-
-    ## Loading required package: rgbif
-
-``` r
 if(!require(sp)){
   install.packages("sp")
   library(sp)
 }
-```
-
-    ## Loading required package: sp
-
-``` r
 if(!require(maps)){
   install.packages("maps")
   library(maps)
 }
-```
-
-    ## Loading required package: maps
-
-``` r
 if(!require(maptools)){
   install.packages("maptools")
   library(maptools)
 }
-```
-
-    ## Loading required package: maptools
-
-    ## Checking rgeos availability: TRUE
-
-``` r
 if(!require(rgeos)){
   install.packages("rgeos")
   library(rgeos)
 }
 ```
 
-    ## Loading required package: rgeos
-
-    ## rgeos version: 0.3-26, (SVN revision 560)
-    ##  GEOS runtime version: 3.6.1-CAPI-1.10.1 r0 
-    ##  Linking to sp version: 1.2-7 
-    ##  Polygon checking: TRUE
-
 Easy test
 ---------
 
-**Download occurrences data from GBIF for a species and display them on a map.** Search for the species *Peltophryne empusa*.
+**Download occurrences data from GBIF for a species and display them on a map.**
+
+Search for the species *Peltophryne empusa*.
 
 ``` r
 pe <- name_lookup(query = "Peltophryne empusa", rank="species", return = "data") #data frame with information of the species
@@ -139,8 +112,6 @@ points(pe_in, col = "red") #adding records in map
 
 ![](Marlon_E_Cobos_test_files/figure-markdown_github/unnamed-chunk-6-1.png)
 
-<br>
-
 Medium test
 -----------
 
@@ -168,8 +139,6 @@ plot(ch_pe, border = "gray40", add = T)
 ```
 
 ![](Marlon_E_Cobos_test_files/figure-markdown_github/unnamed-chunk-8-1.png)
-
-<br>
 
 Hard test
 ---------

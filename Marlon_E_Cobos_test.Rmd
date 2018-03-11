@@ -1,8 +1,10 @@
 ---
-title: "<center> Species range maps in R: test </center>"
+title: '<center> Species range maps in R: test </center>'
 author: "Marlon E. Cobos"
 date: "March 10, 2018"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ```{r setup, include=FALSE}

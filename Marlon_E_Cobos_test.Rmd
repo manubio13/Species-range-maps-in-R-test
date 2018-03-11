@@ -2,9 +2,7 @@
 title: '<center> Species range maps in R: test </center>'
 author: "Marlon E. Cobos"
 date: "March 10, 2018"
-output:
-  pdf_document: default
-  html_document: default
+output: html_document
 ---
 
 ```{r setup, include=FALSE}

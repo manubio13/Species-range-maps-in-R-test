@@ -1,0 +1,71 @@
+GSoC\_Meetings\_report
+================
+Marlon E. Cobos.
+May 8, 2018
+
+-   [First meeting](#first-meeting)
+    -   [Agreements](#agreements)
+    -   [Activities to be done:](#activities-to-be-done)
+-   [Second meeting](#second-meeting)
+    -   [Talking about existent functions and potential functions to add](#talking-about-existent-functions-and-potential-functions-to-add)
+    -   [Activities to be done:](#activities-to-be-done-1)
+-   [Third meeting](#third-meeting)
+
+First meeting
+-------------
+
+Adviser and student presentations.
+
+Advisers: Vijay Barve, Narayani Barve, and Alberto Jiménez Valverde. Student: Marlon E. Cobos
+
+### Agreements
+
+Meetings during community bounding period will be weekly on Wednesday at 9:00 am.
+
+### Activities to be done:
+
+-   Think about combine similar functions in only one
+-   Take a look at the letsR package and see how PAMs are implemented
+    -   This package has three to four functions that allow users to create PAMs from:
+        -   species' occurrences
+        -   species' range areas (shapefiles)
+    -   Functions can be used to create these PAMs within:
+        -   a grid
+        -   a grid for the Birdlife spatial data
+        -   a user's grid shapefile
+
+Second meeting
+--------------
+
+### Talking about existent functions and potential functions to add
+
+-   Functions buffer, concave, and convex hull.
+    -   They can be joined.
+    -   Think in using a distance for buffering final polygons in case of convex and xoncave hulls.
+    -   Concave hull needs an argument for defining the amount of points to be considered when creating the polygon. This is important because it will define the degree of adjustment of the polygon to the occurrences.
+-   PAMs
+    -   They are well covered by the letsR package except for their randomization, which seems to be hard to implement avoiding time consuming processes.
+    -   It seems to be better to not replicate efforts in adding this function; however, see some papers about the randomization of the matrices.
+-   Alpha hull as a new algorithm to create range areas.
+    -   They can recognize areas in which there are no occurrences even if that is inside a cloud of points.
+-   Spliting polygons of range areas.
+    -   Some species may have disjunt distributions; thus, an only polygon would not be the best way to represent their ranges.
+    -   An argument can be added, so, when distances longer than the one defined in the argument, the polygon splits and is recalculated for each disjunt area.
+    -   The function for creating ranges based on boundaries may need this consideration as well.
+-   Adding a function for creating a hypothesis of M (calibration area) following Acevedo et al. 2012
+-   Creating a representation of the geographic areas in the environmental space.
+
+### Activities to be done:
+
+-   Checking other packages that do simmilar or the same things that we want to do.
+    -   Package GeoRange: function CHullAreaEarth, Performs convex hull area calculation from coordinate sets on the Earth's surface.
+    -   Package rangeBuilder: function getDynamicAlphaHull, Generates polygons based on alpha hulls.
+    -   Package concaveman: function concaveman, a very fast 2D concave hull algorithm.
+-   Read about concave hulls and think in how many points to include.
+    -   Perhaps the degree of adjustment should be a argument with a default value but that could be modified if needed.
+-   check Shared Nearest Neighbor clustering.
+    -   It looks like this can be very usefull when implementing the hull algorithms, when working with species with dusjunt distributions.
+    -   Good thing, there is a function in R for doing this already. This function is not applied ina geographic context, but we can use it that way.
+
+Third meeting
+-------------
